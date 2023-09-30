@@ -21,6 +21,7 @@ export const SearchInput: FC<ISearchInputProps> = ({ combobox, onSearchChange, s
     if (isTablet) return '240px'
     return '50px'
   }, [isLaptop, combobox.dropdownOpened, isTablet])
+
   return (
     <TextInput
       size={'lg'}

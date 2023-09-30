@@ -1,6 +1,6 @@
 import { FC, useCallback, useMemo, useState } from 'react'
 import { useDebouncedValue, useLocalStorage } from '@mantine/hooks'
-import { Location } from '@/shared/api'
+import { ILocation } from '@/shared/api'
 import { useOnMarketPropertiesQuery, useSoldPropertiesQuery } from '../hooks'
 import { SearchCombobox } from './SearchCombobox'
 import { locationsMock } from './locations.mock.ts'
@@ -21,15 +21,15 @@ export const SearchBar: FC<ISearchBarProps> = () => {
     enabled: debouncedValue.length > 2,
   })
 
-  const [locations, setLocations] = useLocalStorage<Location[]>({
+  const [locations, setLocations] = useLocalStorage<ILocation[]>({
     key: 'locations',
     defaultValue: locationsMock,
   })
 
-  const addLocation = useCallback((location: Location) => {
+  const addLocation = useCallback((id: string) => {
     setLocations((locations) =>
       locations.map((loc) => {
-        if (loc.id === location.id) {
+        if (loc.id === id) {
           return {
             ...loc,
             selected: true,
@@ -54,10 +54,12 @@ export const SearchBar: FC<ISearchBarProps> = () => {
       })
     )
   }, [])
+
   const selectedLocations = useMemo(() => {
     if (!locations) return []
     return locations.filter((loc) => loc.selected)
   }, [locations])
+
   const unselectedLocations = useMemo(() => {
     if (!locations) return []
     return locations.filter((loc) => !loc.selected)

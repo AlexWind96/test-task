@@ -1,10 +1,6 @@
 import { FC } from 'react'
 import { Box, Combobox, Group, PillGroup, ScrollArea, Stack, useCombobox } from '@mantine/core'
-import {
-  Location as ILocation,
-  OnMarketProperty as IOnMarketProperty,
-  SoldProperty as ISoldProperty,
-} from '@/shared/api'
+import { ILocation, IOnMarketProperty, ISoldProperty } from '@/shared/api'
 import { LocationOption } from './LocationOption'
 import { LocationPill } from './LocationPill'
 import { OnMarketProperty } from './OnMarketProperty'
@@ -19,7 +15,7 @@ type ISearchComboboxProps = {
   soldProperties: ISoldProperty[]
   onMarketProperties: IOnMarketProperty[]
   locations: ILocation[]
-  onLocationClick: (location: ILocation) => void
+  onLocationClick: (id: string) => void
   selectedLocations: ILocation[]
   onLocationPillClick: (id: string) => void
 }
@@ -91,7 +87,7 @@ export const SearchCombobox: FC<ISearchComboboxProps> = ({
                         province={location.province}
                         area={location.area}
                         municipality={location.municipality}
-                        onClick={() => onLocationClick(location)}
+                        onClick={() => onLocationClick(location.id)}
                       />
                     )
                   })}

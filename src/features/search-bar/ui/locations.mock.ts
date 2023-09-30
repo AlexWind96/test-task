@@ -1,6 +1,6 @@
-import { Location } from '@/shared/api'
+import { ILocation } from '@/shared/api'
 
-export const locationsMock: Location[] = [
+export const locationsMock: ILocation[] = [
   {
     id: 'location' + 1,
     municipality: 'Richmond Hill',

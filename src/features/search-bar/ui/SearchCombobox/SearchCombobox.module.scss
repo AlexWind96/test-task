@@ -4,7 +4,6 @@
   height: calc(3.125rem * var(--mantine-scale));
 
   .input {
-
     @media (min-width: 62em) {
       border-left: none;
       border-bottom-left-radius: 0;
@@ -15,6 +14,7 @@
   .input_wrapper {
     flex-grow: 1;
   }
+
   .right_section {
     padding-right: 1.25rem;
     justify-content: flex-end;
@@ -30,6 +30,7 @@
       border: 1px solid var(--mantine-color-primary-5);
       border-right: none;
     }
+
     .input {
       border: 1px solid var(--mantine-color-primary-5);
       @media (min-width: 62em) {
@@ -61,6 +62,7 @@
   border: 1.5px solid var(--mantine-color-gray-0);
 
 }
+
 .options {
   .group:first-child {
     .groupLabel {
@@ -83,11 +85,13 @@
   &:first-of-type {
 
   }
+
 }
 
 .option {
   padding: 0.5rem 1rem;
   border-radius: 0;
+
   &:hover {
     background-color: var(--mantine-color-primary-0);
   }

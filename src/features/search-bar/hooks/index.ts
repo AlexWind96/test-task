@@ -1,8 +1,8 @@
 import { AxiosError } from 'axios'
 import { createQuery } from 'react-query-kit'
-import { API, OnMarketProperty, SoldProperty } from '@/shared/api'
+import { API, IOnMarketProperty, ISoldProperty } from '@/shared/api'
 
-export const useSoldPropertiesQuery = createQuery<SoldProperty[], { search: string }, AxiosError>({
+export const useSoldPropertiesQuery = createQuery<ISoldProperty[], { search: string }, AxiosError>({
   primaryKey: API.autocomplete.basePath + 'sold',
   queryFn: ({ queryKey: [, vars] }) => {
     return API.autocomplete
@@ -12,7 +12,7 @@ export const useSoldPropertiesQuery = createQuery<SoldProperty[], { search: stri
 })
 
 export const useOnMarketPropertiesQuery = createQuery<
-  OnMarketProperty[],
+  IOnMarketProperty[],
   { search: string },
   AxiosError
 >({

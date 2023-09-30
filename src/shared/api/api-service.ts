@@ -1,4 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
+import { API_URL } from '@/shared/config'
 import { AutoCompleteEndpoints } from './autocomplete'
 
 export { Endpoints } from './endpoints'
@@ -16,7 +17,7 @@ export class ApiService {
 
 export const API = new ApiService(
   axios.create({
-    baseURL: 'https://cadi.wealthfunnels.co/api/v1/',
+    baseURL: API_URL,
     headers: {
       'Content-Type': 'application/json',
     },

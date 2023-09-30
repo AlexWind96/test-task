@@ -1,4 +1,4 @@
-export interface Property {
+export interface IProperty {
   id: string
   mls_listing_id: string
   postal_code: string
@@ -20,16 +20,16 @@ export interface Property {
   word_similarity: number
 }
 
-export interface OnMarketProperty extends Property {
+export interface IOnMarketProperty extends IProperty {
   list_price: number
 }
 
-export interface SoldProperty extends Property {
+export interface ISoldProperty extends IProperty {
   sold_price: number
   sold_date: string
 }
 
-export interface Location {
+export interface ILocation {
   id: string
   province: string
   area: string
