@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",
