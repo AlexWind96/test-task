@@ -1,0 +1,27 @@
+.pill {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--mantine-radius-md);;
+  gap: 0.25rem;
+  background-color: var(--mantine-color-black);
+  color: var(--mantine-color-white);
+  .pill_label {
+    font-size: var(--mantine-font-size-xs);
+  }
+  .pill_icon {
+    width: var(--mantine-font-size-xs);
+    height: var(--mantine-font-size-xs);
+  }
+
+  &:hover {
+    background-color: var(--mantine-color-primary-5);
+    cursor: pointer;
+    .pill_icon {
+      background-color: var(--mantine-color-white);
+      border-radius: 50%;
+      color: var(--mantine-color-black);
+    }
+  }
+
+}

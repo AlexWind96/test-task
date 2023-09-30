@@ -1,7 +1,21 @@
-import "@mantine/core/styles.css";
-import { MantineProvider } from "@mantine/core";
-import { theme } from "./theme";
+import { QueryClientProvider } from '@tanstack/react-query'
+import { IconContext } from 'react-icons'
+import { Button, Container, DEFAULT_THEME, MantineProvider } from '@mantine/core'
+import '@mantine/core/styles.css'
+import { SearchBar } from '@/features/search-bar'
+import { queryClient } from '@/shared/libs'
+import { theme } from '@/shared/theme'
 
 export default function App() {
-  return <MantineProvider theme={theme}>App</MantineProvider>;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <IconContext.Provider value={{ size: '1.5rem' }}>
+        <MantineProvider theme={theme}>
+          <Container mt={'xl'} fluid mx={'1rem'}>
+            <SearchBar />
+          </Container>
+        </MantineProvider>
+      </IconContext.Provider>
+    </QueryClientProvider>
+  )
 }
