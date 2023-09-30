@@ -19,8 +19,8 @@ export const PropertyStatusToggle: FC<IPropertyStatusToggleProps> = () => {
     onDropdownClose: () => combobox.resetSelectedOption(),
   })
 
-  const options = statuses.map((status) => (
-    <Combobox.Option value={status} key={status} data-status={status}>
+  const options = statuses.map((status, index) => (
+    <Combobox.Option value={status} key={status + index} data-status={status}>
       {status}
     </Combobox.Option>
   ))
@@ -62,7 +62,9 @@ export const PropertyStatusToggle: FC<IPropertyStatusToggleProps> = () => {
       </Combobox.Target>
 
       <Combobox.Dropdown>
-        <Combobox.Options>{options}</Combobox.Options>
+        <Combobox.Options>
+          {selectedStatus === 'Sale' ? options.reverse() : options}
+        </Combobox.Options>
       </Combobox.Dropdown>
     </Combobox>
   )
