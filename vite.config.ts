@@ -9,7 +9,6 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
   plugins: [
     react(),
-    basicSsl(),
     checker({
       typescript: true,
     }),
