@@ -1,4 +1,4 @@
-import { FC, useMemo, useState } from 'react'
+import { FC, useMemo } from 'react'
 import { TbChevronDown, TbChevronUp } from 'react-icons/tb'
 import { Button, Combobox, useCombobox } from '@mantine/core'
 import { useLocalStorage } from '@mantine/hooks'
@@ -14,7 +14,7 @@ export const PropertyStatusToggle: FC<IPropertyStatusToggleProps> = () => {
     defaultValue: 'Sale',
     getInitialValueInEffect: false,
   })
-  console.log(selectedStatus)
+
   const combobox = useCombobox({
     onDropdownClose: () => combobox.resetSelectedOption(),
   })

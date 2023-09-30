@@ -1,6 +1,6 @@
 import { QueryClientProvider } from '@tanstack/react-query'
 import { IconContext } from 'react-icons'
-import { Button, Container, DEFAULT_THEME, MantineProvider } from '@mantine/core'
+import { Container, MantineProvider } from '@mantine/core'
 import '@mantine/core/styles.css'
 import { SearchBar } from '@/features/search-bar'
 import { queryClient } from '@/shared/libs'

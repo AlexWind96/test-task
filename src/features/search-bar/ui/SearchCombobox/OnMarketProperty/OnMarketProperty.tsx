@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { TbChevronRight, TbPointFilled } from 'react-icons/tb'
-import { Box, Combobox, Group, Stack, Text } from '@mantine/core'
+import { TbPointFilled } from 'react-icons/tb'
+import { Combobox, Group, Stack, Text } from '@mantine/core'
 import { capitalizeFLetter, formatPrice } from '@/shared/utils'
 
 type IOnMarketPropertyProps = {
