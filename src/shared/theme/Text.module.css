@@ -1,0 +1,7 @@
+.root {
+    &[data-variant='placeholder'] {
+        @mixin light {
+            color: var(--mantine-color-gray-6);
+        }
+    }
+}
