@@ -28,8 +28,6 @@ build
 .firebase
 
 # local env files
-.env
-.env.
 .env.development
 .env.staging
 .env.production
